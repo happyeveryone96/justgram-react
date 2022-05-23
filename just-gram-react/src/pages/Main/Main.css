@@ -195,6 +195,7 @@ main {
   width: 500px;
   height: 750px;
   border: 1px solid lightgray;
+  padding: 3px 0;
 }
 
 .feeds-top {
@@ -327,7 +328,7 @@ main {
   display: flex;  
   justify-content: left;
   align-items: center;
-  margin: 0 30px;
+  margin: 10px 30px;
   background-color: transparent;
 }
 
