@@ -57,44 +57,41 @@
   border: 1px solid lightgray;
 }
 
-#my-menu ul {
-  list-style: none;
-  font-size: 20px;
-  padding: 10px;
-}
-
-#my-menu li {
-  color: black;
-  padding: 10px;
-}
-
-#my-menu:after {
-  border-top: 0px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid lightgray;
-  content: "";
-  position: absolute;
-  left: 169px;
-  top: -10px;
-}
-
-#my-menu li:nth-child(2) {
-  padding: 0 12px;
-}
-
-#my-menu li:nth-child(4) {
-  border-top: 1px solid lightgray;
-  width: 200px;
-  font-size: 16px;
-  position: absolute;
-  right: 0;
-  padding: 14px 0;
-}
-
-#my-menu span {
-  padding: 0 10px;
-  cursor: pointer;
+#my-menu {
+  ul {
+    list-style: none;
+    font-size: 20px;
+    padding: 10px;
+    li {
+      color: black;
+      padding: 10px;
+      &:nth-child(2) {
+        padding: 0 12px;
+      }
+      &:nth-child(4) {
+        border-top: 1px solid lightgray;
+        width: 200px;
+        font-size: 16px;
+        position: absolute;
+        right: 0;
+        padding: 14px 0;
+      }
+    }
+  }
+  &:after {
+    border-top: 0px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid lightgray;
+    content: "";
+    position: absolute;
+    left: 169px;
+    top: -10px;
+  }
+  span {
+    padding: 0 10px;
+    cursor: pointer;
+  }
 }
 
 #search-icon {
@@ -300,23 +297,20 @@ main {
   border-top: 1px solid lightgray;
   margin: 3px 0;
   z-index: -1;
-}
-
-
-.write-comment > input {
-  width: 70%;
-  outline: none;
-  border: none;
-  background-color: white;
-  padding: 0 0 0 10px;
-}
-
-.write-comment > button {
-  width: 100px;
-  background-color: white;
-  border: none;
-  color: lightblue;
-  margin: 10px 0 0 200px;
+  input {
+    width: 70%;
+    outline: none;
+    border: none;
+    background-color: white;
+    padding: 0 0 0 10px;
+  }
+  button {
+    width: 100px;
+    background-color: white;
+    border: none;
+    color: lightblue;
+    margin: 10px 0 0 200px;
+  }
 }
 
 .main-right {
