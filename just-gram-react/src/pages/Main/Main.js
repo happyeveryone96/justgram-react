@@ -17,7 +17,6 @@ const commentList = [{ username: 'im_jw', comment: 'hi'}, { username: 'im_jw', c
 function Main() {
   const [commentValue, setCommentValue] = useState('');
   const [isValid, setIsValid] = useState(false);
-  console.log(commentList);
   const updateBtn = () => {
     if (commentValue !== '') {
       setIsValid(true);
