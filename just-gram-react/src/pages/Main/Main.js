@@ -5,14 +5,19 @@ import { faHeart, faComment, faShareFromSquare,
   faBookmark, faCircleUser, faGear, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import Comment from '../../components/Comment/Comment';
+
 
 library.add(faHeart, faComment, faShareFromSquare, 
   faBookmark, faCircleUser, faGear, faMagnifyingGlass, faInstagram);
 
+const commentList = [{ username: 'im_jw', comment: 'hi'}, { username: 'im_jw', comment: 'hi'}]
+
+
 function Main() {
   const [commentValue, setCommentValue] = useState('');
   const [isValid, setIsValid] = useState(false);
-
+  console.log(commentList);
   const updateBtn = () => {
     if (commentValue !== '') {
       setIsValid(true);
@@ -25,31 +30,10 @@ function Main() {
     setCommentValue(e.target.value)
   }
 
-  const comment = document.getElementById('comment');
   const writeBtn = document.getElementById('write-btn');
-  const commentContainer = document.getElementsByClassName('feeds-comments')[0];
 
   const postComment = () => {
-    const div = document.createElement('div');
-    div.innerHTML = `
-      <div className="user-comment">
-        <div>
-          <span className="nickname"></span>
-          <span className="comment-value"></span>
-        </div>
-      </div>
-    `;
-  
-    const div2 = div.getElementsByTagName('div')[0];
-    const span = div.getElementsByTagName('span')[0];
-    const span2 = div.getElementsByTagName('span')[1];
-  
-    span.textContent = 'im_jw';
-    span.style.fontWeight = 800;
-    div2.style.padding = '0 20px'
-    span2.textContent = ` ${comment.value}`;
-  
-    commentContainer.prepend(div);
+    commentList.push({username: '123', comment: commentValue})
     setCommentValue('');
     writeBtn.disabled = true;
     writeBtn.style.cursor = 'auto';
@@ -123,6 +107,16 @@ function Main() {
               <div><span className="nickname">im_rudy</span>님 외 10명이 좋아합니다</div>
             </div>
             <div className="feeds-comments">
+              {
+                commentList.map((comment, idx) => {
+                  return (
+                    <Comment 
+                      key={idx} 
+                      username={comment.username} 
+                      comment={comment.comment}/>
+                  )
+                })
+              }
               <div className="time feed-time">42분 전</div>
               <div className="write-comment">
                 <input 
