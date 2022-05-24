@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment, faShareFromSquare, 
@@ -10,6 +10,58 @@ library.add(faHeart, faComment, faShareFromSquare,
   faBookmark, faCircleUser, faGear, faMagnifyingGlass, faInstagram);
 
 function Main() {
+  const [commentValue, setCommentValue] = useState('');
+  const [isValid, setIsValid] = useState(false);
+
+  const updateBtn = () => {
+    if (commentValue !== '') {
+      setIsValid(true);
+    } else {
+      setIsValid(false);
+    }
+  }
+
+  const handleCommentInput = (e) => {
+    setCommentValue(e.target.value)
+  }
+
+  const comment = document.getElementById('comment');
+  const writeBtn = document.getElementById('write-btn');
+  const commentContainer = document.getElementsByClassName('feeds-comments')[0];
+
+  const postComment = () => {
+    const div = document.createElement('div');
+    div.innerHTML = `
+      <div className="user-comment">
+        <div>
+          <span className="nickname"></span>
+          <span className="comment-value"></span>
+        </div>
+      </div>
+    `;
+  
+    const div2 = div.getElementsByTagName('div')[0];
+    const span = div.getElementsByTagName('span')[0];
+    const span2 = div.getElementsByTagName('span')[1];
+  
+    span.textContent = 'im_jw';
+    span.style.fontWeight = 800;
+    div2.style.padding = '0 20px'
+    span2.textContent = ` ${comment.value}`;
+  
+    commentContainer.prepend(div);
+    setCommentValue('');
+    writeBtn.disabled = true;
+    writeBtn.style.cursor = 'auto';
+    writeBtn.style.color = 'lightblue';
+  }
+
+  const enterkey = () => {
+    if (isValid && window.event.keyCode === 13) {
+      postComment();
+    }
+  }
+
   return (
       <div>
         <nav className="navigation">
@@ -73,8 +125,24 @@ function Main() {
             <div className="feeds-comments">
               <div className="time feed-time">42분 전</div>
               <div className="write-comment">
-                <input id="comment" type="text" placeholder="댓글 달기..." />
-                <button id="write-btn">게시</button>
+                <input 
+                  onKeyUp={updateBtn} 
+                  onKeyDown={enterkey} 
+                  onChange={handleCommentInput} 
+                  id="comment" 
+                  type="text" 
+                  placeholder="댓글 달기..." 
+                  value={commentValue}
+                />
+                <button 
+                  id="write-btn" 
+                  disabled={isValid ? false : true}
+                  style={{
+                    color: isValid ? 'blue' : 'lightblue',
+                    cursor: isValid ? 'pointer' : 'auto' 
+                  }}
+                  onClick={postComment}
+                  >게시</button>
               </div>
             </div>
           </article>
