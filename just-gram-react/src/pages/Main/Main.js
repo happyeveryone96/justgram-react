@@ -11,11 +11,10 @@ import Comment from '../../components/Comment/Comment';
 library.add(faHeart, faComment, faShareFromSquare, 
   faBookmark, faCircleUser, faGear, faMagnifyingGlass, faInstagram);
 
-const commentList = [{ username: 'im_jw', comment: 'hi'}, { username: 'im_jw', comment: 'hi'}]
-
 
 function Main() {
   const [commentValue, setCommentValue] = useState('');
+  const [commentList, setCommentList] = useState([{username: 'im_jw', comment: 'hi'}])
   const [isValid, setIsValid] = useState(false);
   const updateBtn = () => {
     if (commentValue !== '') {
@@ -32,7 +31,7 @@ function Main() {
   const writeBtn = document.getElementById('write-btn');
 
   const postComment = () => {
-    commentList.push({username: '123', comment: commentValue})
+    setCommentList([...commentList, { username: '123', comment: commentValue}]);
     setCommentValue('');
     writeBtn.disabled = true;
     writeBtn.style.cursor = 'auto';
