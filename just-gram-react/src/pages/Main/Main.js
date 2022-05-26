@@ -28,14 +28,10 @@ function Main() {
     setCommentValue(e.target.value)
   }
 
-  const writeBtn = document.getElementById('write-btn');
-
   const postComment = () => {
-    setCommentList([...commentList, { username: '123', comment: commentValue}]);
-    setCommentValue('');
-    writeBtn.disabled = true;
-    writeBtn.style.cursor = 'auto';
-    writeBtn.style.color = 'lightblue';
+      setCommentList([...commentList, { username: '123', comment: commentValue}]);
+      setCommentValue('');
+      setIsValid(false);
   }
 
   const enterkey = () => {
