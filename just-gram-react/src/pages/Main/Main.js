@@ -16,11 +16,15 @@ function Main() {
   const [commentValue, setCommentValue] = useState('');
   const [commentList, setCommentList] = useState([{username: 'im_jw', comment: 'hi'}])
   const [isValid, setIsValid] = useState(false);
+  
   const updateBtn = () => {
     if (commentValue !== '') {
       setIsValid(true);
     } else {
       setIsValid(false);
+    }
+    if (isValid && window.event.keyCode === 13) {
+      postComment();
     }
   }
 
@@ -32,12 +36,6 @@ function Main() {
       setCommentList([...commentList, { username: '123', comment: commentValue}]);
       setCommentValue('');
       setIsValid(false);
-  }
-
-  const enterkey = () => {
-    if (isValid && window.event.keyCode === 13) {
-      postComment();
-    }
   }
 
   return (
@@ -101,21 +99,19 @@ function Main() {
               <div><span className="nickname">im_rudy</span>님 외 10명이 좋아합니다</div>
             </div>
             <div className="feeds-comments">
-              {
-                commentList.map((comment, idx) => {
+              {commentList.map((comment, idx) => {
                   return (
                     <Comment 
                       key={idx} 
                       username={comment.username} 
-                      comment={comment.comment}/>
+                      comment={comment.comment}
+                    />
                   )
-                })
-              }
+              })}
               <div className="time feed-time">42분 전</div>
               <div className="write-comment">
                 <input 
                   onKeyUp={updateBtn} 
-                  onKeyDown={enterkey} 
                   onChange={handleCommentInput} 
                   id="comment" 
                   type="text" 
