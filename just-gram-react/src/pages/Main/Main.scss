@@ -1,5 +1,5 @@
 * {
-  background-color: white;
+  background-color: #f9f9f9;
 }
 
 .navigation {
@@ -8,14 +8,16 @@
   justify-content: space-around;
   align-items: center;
   font-size: 30px;
-  margin: 15px 0;
   height: 55px;
+  background-color: white;
+  padding: 30px;
 }
 
 .nav-left,
 .nav-center,
 .nav-right {
   display: flex;
+  background-color: white;
 }
 
 .nav-center {
@@ -154,12 +156,14 @@
   font-size: 40px;
   margin: 5px 0 0 0;
   cursor: pointer;
+  background-color: white;
 }
 
 #logo {
   font-family: 'Lobster', cursive;
   font-size: 40px;
   cursor: pointer;
+  background-color: white;
 }
 
 img {
@@ -302,9 +306,9 @@ main {
 }
 
 .main-right {
-  position: relative;
-  bottom: 900px;
-  left: 400px;
+  position: fixed;
+  top: 0;
+  left: 900px;
   margin: 150px auto;
   background-color: rgb(249,249,249);
   width: 400px;
