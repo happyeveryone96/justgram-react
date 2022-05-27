@@ -11,8 +11,8 @@ function Comment(props) {
     <>
       <div className="user-comment">
         <div>
-          <span className="username">{props.username}</span>
-          <span className="comment-value"> {props.comment}</span>
+          <span className="username">{props.userName}</span>
+          <span className="comment-value"> {props.content}</span>
         </div>
         <div className="comment-right">
           <FontAwesomeIcon icon="fa-solid fa-heart" color="gray" />
