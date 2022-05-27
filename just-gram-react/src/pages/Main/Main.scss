@@ -2,6 +2,10 @@
   background-color: #f9f9f9;
 }
 
+.main {
+  position: relative;
+}
+
 .navigation {
   display: flex;
   min-width: 600px;
@@ -171,10 +175,6 @@ img {
   cursor: pointer;
 }
 
-#feed-img {
-  margin: 0;
-}
-
 #division {
   background: black;
   width: 2px;
@@ -190,70 +190,10 @@ main {
   padding: 30px;
 }
 
-.feeds {
-  width: 500px;
-  position: relative;
-  right: 100px;
-  margin: 0 auto;
-  border: 1px solid lightgray;
-  padding: 3px 0;
-}
-
-.feeds-top {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-.feeds-top-left,
-.feeds-top-right {
-  display: flex;
-  align-items: center;
-}
-
-.feeds-top-right {
-  cursor: pointer;
-}
-
-#profile-img {
-  border-radius: 30px;
-  width: 30px;
-  height: 30px;
-}
-
-.feeds-icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px;
-}
-
-.feeds-icons-left {
-  display: flex;
-  align-items: center;
-}
-
-.feeds-icons-left > div {
-  padding: 0 5px;
-}
-
-.feeds-likes {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 10px;
-}
-
-.feeds-comments-top {
-  position: relative;
-  left: 20px;
-  padding-bottom: 5px;
-}
-
 .fa-heart {
   cursor: pointer;
 }
 
-.time,
 .others,
 .ad-desc,
 .story-text,
@@ -266,47 +206,15 @@ main {
   width: 140px;
 }
 
-.time {
-  position: relative;
-  padding-bottom: 5px;
-}
-
-.feed-time {
-  padding-left: 20px;
-}
-
 .nickname {
   font-weight: 800;
   cursor: pointer;
 }
 
-.write-comment {
-  display: flex;
-  background-color: white;
-  border-top: 1px solid lightgray;
-  margin: 3px 0;
-  z-index: -1;
-  input {
-    width: 70%;
-    outline: none;
-    border: none;
-    background-color: white;
-    padding: 0 0 0 10px;
-  }
-  button {
-    width: 100px;
-    font-size: 16px;
-    background-color: white;
-    border: none;
-    color: lightblue;
-    margin: 12px 0 0 200px;
-  }
-}
-
 .main-right {
-  position: relative;
-  bottom: 900px;
-  left: 400px;
+  position: absolute;
+  top: 0;
+  left: 70vw;
   margin: 150px auto;
   background-color: rgb(249, 249, 249);
   width: 400px;
@@ -398,10 +306,5 @@ main {
 @media screen and (max-width: 900px) {
   .main-right {
     display: none;
-  }
-  .feeds {
-    position: relative;
-    right: 0;
-    margin: 0 auto;
   }
 }
