@@ -12,7 +12,7 @@
   justify-content: space-around;
   align-items: center;
   font-size: 30px;
-  height: 55px;
+  height: 15px;
   background-color: white;
   padding: 30px;
 }
@@ -30,6 +30,8 @@
 
 #search-icon {
   background-color: transparent;
+  position: relative;
+  bottom: 5px;
 }
 
 .fa-magnifying-glass {
@@ -40,7 +42,8 @@
 }
 
 #search {
-  padding: 0 40px;
+  padding: 0 20px;
+  height: 40px;
 }
 
 .nav-right {
@@ -214,6 +217,7 @@ main {
 .others {
   padding-bottom: 5px;
   width: 140px;
+  background-color: white;
 }
 
 .nickname {
@@ -258,6 +262,9 @@ main {
   margin: 30px;
   padding: 10px;
   background-color: white;
+  &-text {
+    background-color: white;
+  }
 }
 
 .story-top {
@@ -272,6 +279,9 @@ main {
   display: flex;
   padding: 5px;
   background-color: white;
+  div {
+    background-color: white;
+  }
 }
 
 .all {
@@ -281,6 +291,7 @@ main {
 .suggestion {
   min-width: 320px;
   border: 1px solid lightgray;
+  background-color: white;
   margin: 30px;
   padding: 10px;
 }
@@ -289,11 +300,16 @@ main {
   display: flex;
   padding: 10px;
   justify-content: space-between;
+  background-color: white;
 }
 
 .suggestion-user {
   display: flex;
   padding: 5px;
+  background-color: white;
+  div {
+    background-color: white;
+  }
 }
 
 .follow-btn {
