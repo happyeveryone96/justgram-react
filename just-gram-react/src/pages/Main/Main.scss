@@ -207,6 +207,10 @@ main {
   color: gray;
 }
 
+.time {
+  background-color: white;
+}
+
 .others {
   padding-bottom: 5px;
   width: 140px;
@@ -215,6 +219,7 @@ main {
 .nickname {
   font-weight: 800;
   cursor: pointer;
+  background-color: white;
 }
 
 .main-right {
@@ -222,7 +227,6 @@ main {
   top: 0;
   left: 70vw;
   margin: 150px auto;
-  background-color: rgb(249, 249, 249);
   width: 400px;
 }
 
@@ -253,6 +257,7 @@ main {
   border: 1px solid lightgray;
   margin: 30px;
   padding: 10px;
+  background-color: white;
 }
 
 .story-top {
@@ -260,11 +265,13 @@ main {
   width: 300px;
   padding: 10px;
   justify-content: space-between;
+  background-color: white;
 }
 
 .story-user {
   display: flex;
   padding: 5px;
+  background-color: white;
 }
 
 .all {

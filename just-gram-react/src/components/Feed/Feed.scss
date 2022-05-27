@@ -4,32 +4,33 @@ img {
 }
 
 #feed-img {
-  margin: 0;
+  margin: -10px 0;
 }
 
 .feeds {
+  * {
+    background-color: white;
+  }
   width: 500px;
   position: relative;
   right: 100px;
   margin: 30px auto;
   border: 1px solid lightgray;
-  padding: 3px 0;
-}
-
-.feeds-top {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
-}
-
-.feeds-top-left,
-.feeds-top-right {
-  display: flex;
-  align-items: center;
-}
-
-.feeds-top-right {
-  cursor: pointer;
+  padding: 3px 0 0 0;
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: -3px 0;
+    &-left,
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+    &-right {
+      cursor: pointer;
+    }
+  }
 }
 
 #profile-img {
@@ -42,16 +43,14 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px;
-}
-
-.feeds-icons-left {
-  display: flex;
-  align-items: center;
-}
-
-.feeds-icons-left > div {
-  padding: 0 5px;
+  padding: 10px;
+  &-left {
+    display: flex;
+    align-items: center;
+    div {
+      padding: 0 5px;
+    }
+  }
 }
 
 .feeds-likes {
@@ -89,8 +88,6 @@ img {
   display: flex;
   background-color: white;
   border-top: 1px solid lightgray;
-  margin: 3px 0;
-  z-index: -1;
   input {
     width: 70%;
     outline: none;
