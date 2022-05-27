@@ -43,8 +43,14 @@
   padding: 0 40px;
 }
 
-.nav-right img {
-  cursor: pointer;
+.nav-right {
+  img {
+    cursor: pointer;
+    background-color: white;
+  }
+  div {
+    background-color: white;
+  }
 }
 
 #user {
