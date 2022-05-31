@@ -39,6 +39,25 @@ function Login() {
         result.token !== undefined ? navigate('/main') : alert(result.message);
       });
   };
+
+  const signUpBtn = () => {
+    fetch('http://52.79.143.176:8000/users/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: idValue,
+        password: pwValue,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        result.userId !== undefined
+          ? alert('회원가입 완료!')
+          : alert(result.message);
+      });
+  };
   return (
     <div className="container">
       <h1>Justgram</h1>
@@ -61,6 +80,9 @@ function Login() {
           onClick={loginBtn}
         >
           로그인
+        </button>
+        <button className="signUp" onClick={signUpBtn}>
+          회원가입
         </button>
       </div>
       <Link to="/" id="searchPw">
