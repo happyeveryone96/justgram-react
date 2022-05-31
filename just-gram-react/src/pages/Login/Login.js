@@ -23,8 +23,21 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    navigate('/main');
+  const loginBtn = () => {
+    fetch('http://52.79.143.176:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: idValue,
+        password: pwValue,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        result.token !== undefined ? navigate('/main') : alert(result.message);
+      });
   };
   return (
     <div className="container">
@@ -45,7 +58,7 @@ function Login() {
         <button
           disabled={isValid ? false : true}
           className={isValid ? 'activated' : 'deactivated'}
-          onClick={goToMain}
+          onClick={loginBtn}
         >
           로그인
         </button>
